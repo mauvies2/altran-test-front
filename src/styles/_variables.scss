@@ -1,0 +1,11 @@
+@mixin flexbox($jus, $align, $direc) {
+  display: flex;
+  justify-content: $jus;
+  align-items: $align;
+  flex-direction: $direc;
+}
+
+$background-color: rgba(31, 31, 31, 0.685);
+$title-color: rgba(124, 124, 124, 0.835);
+$btn-color: rgb(151, 151, 151);
+$main-color: #3a332c;

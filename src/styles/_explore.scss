@@ -1,0 +1,44 @@
+.explore {
+  padding: 2rem 2rem;
+  width: 50rem;
+  //   height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(31, 31, 31, 0.685);
+  border-radius: 15px;
+}
+
+/* CITIZEN */
+
+.citizen {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.citizen .col {
+  width: 12.5%;
+  /* height: 12rem; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 1rem 1rem;
+}
+
+.image-cropper {
+  width: 70px;
+  height: 70px;
+  /* position: relative;
+  overflow: hidden; */
+  border-radius: 50%;
+  /* background-color: blue; */
+  background-position: center;
+  background-size: cover;
+}
+
+.citizen {
+  background-color: blue;
+  margin: 0.5rem 0;
+}

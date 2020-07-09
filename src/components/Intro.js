@@ -6,12 +6,12 @@ import GeneralInfo from "./GeneralInfo";
 export default function Intro({ population }) {
   return (
     <div className="main-container">
-      <h2>You are in Brastlewark!</h2>
+      <h1>welcome to brastlewark</h1>
       <GeneralInfo population={population} />
-      <h3>Click here to explore more details</h3>
-      <button>
-        <Link to="/explore">Explore</Link>
-      </button>
+      <h2>Click here to explore more details</h2>
+      <Link to="/explore">
+        <button>Explore</button>
+      </Link>
     </div>
   );
 }

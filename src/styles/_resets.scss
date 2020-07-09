@@ -1,0 +1,62 @@
+html {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  font: 0.9rem sans-serif;
+  color: #fff;
+
+  //   letter-spacing: 1px;
+  //   line-height: 1.5;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+body {
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  padding: 2rem 1rem;
+}
+
+.app {
+  height: 100vh;
+  @include flexbox(center, center, row);
+}
+
+p {
+  text-transform: capitalize;
+}
+
+h1 {
+  text-align: center;
+  color: $title-color;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+h2 {
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.726);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+h3 {
+  //   margin-top: 2rem;
+  font-size: 1rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.726);
+  letter-spacing: 2px;
+  //   text-transform: uppercase;
+  //   margin-bottom: 2rem;
+  font-weight: 400;
+}

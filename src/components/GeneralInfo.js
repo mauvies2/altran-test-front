@@ -65,32 +65,32 @@ export default function GeneralInfo({ population }) {
 
   return (
     <section className="general-info">
-      <div>
+      <div className="general-info-card">
         <h3>Citizens</h3>
         <div>{totalPopulation}</div>
       </div>
-      <div>
+      <div className="general-info-card">
         <h3>Median Age</h3>
         <div>{avgAge}</div>
       </div>
-      <div>
+      <div className="general-info-card">
         <h3>Median Weight</h3>
         <div>{avgWeight}</div>
       </div>
-      <div>
+      <div className="general-info-card">
         <h3>Median Height</h3>
         <div>{avgHeight}</div>
       </div>
-      <div>
-        <h3>Average number of friends</h3>
+      <div className="general-info-card">
+        <h3>Avg friends</h3>
         <div>{avgFriends}</div>
       </div>
-      <div>
-        <h3>Most Coomon Hair Color</h3>
+      <div className="general-info-card">
+        <h3>Common Hair Color</h3>
         <div>{commonValue(hairColors)}</div>
       </div>
-      <div>
-        <h3>Most Common Proffesion</h3>
+      <div className="general-info-card">
+        <h3>Common Proffesion</h3>
         <div>{commonValue(professions)}</div>
       </div>
     </section>

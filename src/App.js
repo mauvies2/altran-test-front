@@ -5,7 +5,7 @@ import { Switch, Route } from "react-router-dom";
 
 import Intro from "./components/Intro";
 import Explore from "./components/Explore";
-import "./App.css";
+import "./App.scss";
 
 const App = () => {
   const [population, setPopulation] = useState([]);
