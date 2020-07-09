@@ -2,7 +2,7 @@ html,
 body,
 #root {
   font: 0.9rem sans-serif;
-  background: #0a1f44;
+  /* background: #0a1f44; */
   /* color: #1e2432; */
   color: #fff;
   height: 100vh;
@@ -11,10 +11,24 @@ body,
 
 .app {
   height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("./img/brastlewark2.jpg");
   background-size: cover;
   background-position: center;
+  background-attachment: fixed; */
+}
+
+p {
+  text-transform: capitalize;
+}
+
+.background-img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: -5;
+  filter: brightness(40%);
 }
 
 .main-container {
@@ -32,23 +46,6 @@ body,
   border: none;
   margin-bottom: 5%;
   background: rgba(250, 250, 250, 0.85);
-}
-
-.city {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 40px 8%;
-  border-radius: 20px;
-  background: rgba(250, 250, 250, 0.85);
-  box-shadow: 10px 10px 5px 0px rgba(15, 15, 15, 0.404);
-}
-
-p {
-  margin-top: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
 }
 
 .city-temp {
@@ -124,11 +121,23 @@ p {
   justify-content: space-evenly;
   width: 100%;
 }
-.citizen div {
+.citizen .col {
   width: 12.5%;
+  /* height: 12rem; */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   margin: 1rem 1rem;
+}
+
+.image-cropper {
+  width: 70px;
+  height: 70px;
+  /* position: relative;
+  overflow: hidden; */
+  border-radius: 50%;
+  /* background-color: blue; */
+  background-position: center;
+  background-size: cover;
 }

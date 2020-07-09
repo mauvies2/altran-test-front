@@ -27,6 +27,11 @@ const App = () => {
   return (
     population.length > 0 && (
       <div className="app">
+        <img
+          className="background-img"
+          src={require("./img/brastlewark2.jpg")}
+          alt="background"
+        />
         <Switch>
           <Route
             exact

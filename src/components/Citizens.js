@@ -1,20 +1,40 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Citizen from "./Citizen";
 
-export default function Citizens({ population }) {
-  const [n, setN] = useState(5);
-  console.log(population);
-  const citizensPreview = [];
-  for (let i = 0; i < 10; i++) {
-    citizensPreview.push(population[i]);
-  }
-  useEffect(() => {}, [n]);
+export default function Citizens(props) {
+  const [numGnomesDisplayed, setnumGnomesDisplayed] = useState(5);
+
+  //   const queryIsEmpty = (query) => {
+  //     for (var key in query) {
+  //       if (query.hasOwnProperty(key)) {
+  //         return true;
+  //       }
+  //     }
+  //     return false;
+  //   };
+
   return (
     <div>
-      {population.slice(0, n).map((citizen) => {
+      {props.gnomesFiltered.slice(0, numGnomesDisplayed).map((citizen) => {
         return <Citizen key={citizen.id} citizen={citizen} />;
       })}
-      <button onClick={() => setN(n + 5)}>See more Gnomes</button>
+      <button onClick={() => setnumGnomesDisplayed(numGnomesDisplayed + 5)}>
+        See more Gnomes
+      </button>
     </div>
   );
+  //   : (
+  //     <div>
+  //       {console.log(gnomesFiltered)}
+  //       {gnomesFiltered.map((citizen) => {
+  //         return <Citizen key={citizen.id} citizen={citizen} />;
+  //       })}
+  //       <button onClick={() => setnumGnomesDisplayed(numGnomesDisplayed + 5)}>
+  //         See more Gnomes
+  //       </button>
+  //     </div>
+  //   );
 }
+
+//   console.log(gnomes);
+//   console.log(query);
