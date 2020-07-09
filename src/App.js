@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import GeneralInfo from "./GeneralInfo";
 
+import { Switch, Route } from "react-router-dom";
+
+import Intro from "./components/Intro";
+import Explore from "./components/Explore";
 import "./App.css";
 
 const App = () => {
@@ -20,15 +23,22 @@ const App = () => {
     };
     fetchData();
   }, []);
-  console.log(population);
-
+  // console.log(population);
   return (
     population.length > 0 && (
-      <div className="main-container">
-        <h2>You are in Brastlewark!</h2>
-        <GeneralInfo population={population} />
-        <h3>Click here to explore more details</h3>
-        <button>Explore</button>
+      <div className="app">
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={() => <Intro population={population} />}
+          ></Route>
+          <Route
+            exact
+            path="/explore"
+            render={() => <Explore population={population} />}
+          ></Route>
+        </Switch>
       </div>
     )
   );
