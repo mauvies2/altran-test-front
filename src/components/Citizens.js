@@ -14,7 +14,7 @@ export default function Citizens(props) {
   //   };
 
   return (
-    <div>
+    <div className="citizens">
       {props.gnomesFiltered.slice(0, numGnomesDisplayed).map((citizen) => {
         return <Citizen key={citizen.id} citizen={citizen} />;
       })}
@@ -23,18 +23,4 @@ export default function Citizens(props) {
       </button>
     </div>
   );
-  //   : (
-  //     <div>
-  //       {console.log(gnomesFiltered)}
-  //       {gnomesFiltered.map((citizen) => {
-  //         return <Citizen key={citizen.id} citizen={citizen} />;
-  //       })}
-  //       <button onClick={() => setnumGnomesDisplayed(numGnomesDisplayed + 5)}>
-  //         See more Gnomes
-  //       </button>
-  //     </div>
-  //   );
 }
-
-//   console.log(gnomes);
-//   console.log(query);

@@ -1,44 +1,75 @@
 .explore {
-  padding: 2rem 2rem;
-  width: 50rem;
-  //   height: 90%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: rgba(31, 31, 31, 0.685);
+  position: absolute;
+  top: 0;
+  padding: 2rem 1rem;
+  width: 90%;
+  @include flexbox(flex-start, center, column);
   border-radius: 15px;
 }
 
-/* CITIZEN */
+// .filter-form {
+//   display: flex;
+//   justify-content: space-evenly;
+//   width: 100%;
+// }
+// /// CITIZENS ///
+
+.citizens {
+  @include flexbox(flex-start, center, column);
+  button {
+    float: right;
+  }
+}
+
+// /* CITIZEN */
 
 .citizen {
-  display: flex;
-  justify-content: space-evenly;
+  @include flexbox(center, flex-start, row);
   width: 100%;
-}
-.citizen .col {
-  width: 12.5%;
-  /* height: 12rem; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin: 1rem 1rem;
+  // background-color: rgba(124, 104, 104, 0.438);
+  background-color: rgba(31, 31, 31, 0.733);
+  margin: 1rem 0;
+  flex-wrap: wrap;
+  border-radius: 20px;
+  padding: 1rem 1rem;
+
+  .col {
+    @include flexbox(flex-start, center, column);
+    flex-wrap: wrap;
+    // width: 10rem;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0.5rem;
+
+    p {
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      line-height: 1.5;
+      text-align: center;
+    }
+    h2 {
+      font-size: 1rem;
+      letter-spacing: 1px;
+      margin: 0 0.5rem 0.5rem 0.5rem;
+    }
+  }
 }
 
 .image-cropper {
   width: 70px;
   height: 70px;
-  /* position: relative;
-  overflow: hidden; */
+  overflow: hidden;
   border-radius: 50%;
-  /* background-color: blue; */
   background-position: center;
   background-size: cover;
 }
 
-.citizen {
-  background-color: blue;
-  margin: 0.5rem 0;
+// /// FILTER ///
+.filter {
+  display: none;
+}
+.filter form {
+  @include flexbox(center, center, row);
+  flex-wrap: wrap;
+  width: 90%;
+  height: 10rem;
 }
