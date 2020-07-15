@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-
 import { Switch, Route } from "react-router-dom";
+import axios from "axios";
 
 import Intro from "./components/Intro";
 import Explore from "./components/Explore";

@@ -3,54 +3,59 @@ import React, { useState } from "react";
 export default function Filter(props) {
   const initialQuery = {
     name: "",
-    minAge: "",
-    maxAge: "",
-    minWeight: "",
-    maxWeight: "",
-    minHeight: "",
-    maxHeight: "",
-    hairColor: "",
+    age: "",
+    hair_color: "",
     friends: "",
     profession: "",
   };
+
+  // State to control filter query
   const [query, setQuery] = useState(initialQuery);
 
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
+  // State to control styles
+  const [filter, setFilter] = useState(false);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
     setQuery({ ...query, [name]: value });
   };
 
-  //   const filterStyle = {
-  //       display:
-  //   }
+  const onSubmit = (e) => {
+    e.preventDefault();
+    props.filter(query);
+    setQuery(initialQuery);
+  };
+
+  const filterStyle = {
+    display: filter ? "flex" : "none",
+  };
+  const filterBtn = {
+    display: filter ? "none" : "block",
+  };
+  const backBtn = {
+    display: filter ? "block" : "none",
+  };
 
   return (
-    <section>
-      <button>Back</button>
-      <button>Filter</button>
-      <div className="filter">
-        <form
-          className="filter-form"
-          onSubmit={(e) => {
-            e.preventDefault();
-            // On submit the query is triggered
-            props.filter(query);
-            setQuery(initialQuery);
-          }}
-        >
+    <div className="filter-container">
+      <button style={filterBtn} onClick={() => setFilter(!filter)}>
+        Filter
+      </button>
+      <form className="filter-form" onSubmit={onSubmit}>
+        <div className="filter" style={filterStyle}>
           <div>
             <input
               name="name"
               value={query.name}
               type="text"
-              placeholder="Enter name"
+              placeholder="Name"
               onChange={handleInputChange}
             ></input>
           </div>
           <div>
             <input
-              name="hairColor"
-              value={query.hairColor}
+              name="hair_color"
+              value={query.hair_color}
               type="text"
               placeholder="Enter hair color"
               onChange={handleInputChange}
@@ -58,51 +63,10 @@ export default function Filter(props) {
           </div>
           <div>
             <input
-              name="minAge"
-              value={query.minAge}
+              name="age"
+              value={query.age}
               type="number"
-              placeholder="Enter min age"
-              onChange={handleInputChange}
-            ></input>
-            <input
-              name="maxAge"
-              value={query.maxAge}
-              type="text"
-              placeholder="Enter max age"
-              onChange={handleInputChange}
-              min="0"
-            ></input>
-          </div>
-          <div>
-            <input
-              name="minWeight"
-              value={query.minWeight}
-              type="number"
-              placeholder="Enter min weight "
-              onChange={handleInputChange}
-              min="0"
-            ></input>
-            <input
-              name="maxWeight"
-              value={query.maxWeight}
-              type="number"
-              placeholder="Enter max weight"
-              onChange={handleInputChange}
-            ></input>
-          </div>
-          <div>
-            <input
-              name="minHeight"
-              value={query.minHeight}
-              type="number"
-              placeholder="Enter min height"
-              onChange={handleInputChange}
-            ></input>
-            <input
-              name="maxHeight"
-              value={query.maxHeight}
-              type="number"
-              placeholder="Enter max height"
+              placeholder="Age"
               onChange={handleInputChange}
             ></input>
           </div>
@@ -112,7 +76,7 @@ export default function Filter(props) {
               name="friends"
               value={query.friends}
               type="number"
-              placeholder="Enter number of friends"
+              placeholder="# Of friends"
               onChange={handleInputChange}
             ></input>
           </div>
@@ -121,13 +85,18 @@ export default function Filter(props) {
               name="profession"
               value={query.profession}
               type="text"
-              placeholder="Enter profession"
+              placeholder="Profession"
               onChange={handleInputChange}
             ></input>
           </div>
-          <button>Search</button>
-        </form>
-      </div>
-    </section>
+        </div>
+        <div className="filter-bottom-btn">
+          <button style={backBtn}>Search</button>
+          <button style={backBtn} onClick={() => setFilter(!filter)}>
+            Back
+          </button>
+        </div>
+      </form>
+    </div>
   );
 }

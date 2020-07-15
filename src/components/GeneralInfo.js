@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function GeneralInfo({ population }) {
+const GeneralInfo = ({ population }) => {
   const totalPopulation = population.length;
 
   const ageSum = population
@@ -43,8 +43,6 @@ export default function GeneralInfo({ population }) {
   for (let i = 0; i < citizensProfessions.length; i++) {
     professions = professions.concat(citizensProfessions[i]);
   }
-
-  console.log(professions);
 
   const commonValue = (array) => {
     let result,
@@ -95,4 +93,6 @@ export default function GeneralInfo({ population }) {
       </div>
     </section>
   );
-}
+};
+
+export default GeneralInfo;

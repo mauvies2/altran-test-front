@@ -2,16 +2,8 @@ import React, { useState } from "react";
 import Citizen from "./Citizen";
 
 export default function Citizens(props) {
+  // State of gnomes to be display on list
   const [numGnomesDisplayed, setnumGnomesDisplayed] = useState(5);
-
-  //   const queryIsEmpty = (query) => {
-  //     for (var key in query) {
-  //       if (query.hasOwnProperty(key)) {
-  //         return true;
-  //       }
-  //     }
-  //     return false;
-  //   };
 
   return (
     <div className="citizens">

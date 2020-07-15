@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import GeneralInfo from "./GeneralInfo";
 
-export default function Intro({ population }) {
+const Intro = ({ population }) => {
   return (
     <div className="main-container">
       <h1>welcome to brastlewark</h1>
@@ -14,4 +14,5 @@ export default function Intro({ population }) {
       </Link>
     </div>
   );
-}
+};
+export default Intro;
