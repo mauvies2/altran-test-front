@@ -7,7 +7,7 @@
 /// CITIZEN ///
 
 .citizen {
-  @include flexbox(center, flex-start, row);
+  @include flexbox(space-around, flex-start, row);
   width: 100%;
   background-color: rgba(31, 31, 31, 0.733);
   margin: 1rem 0;

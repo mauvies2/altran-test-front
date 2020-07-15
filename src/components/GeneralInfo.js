@@ -7,36 +7,27 @@ const GeneralInfo = ({ population }) => {
     .map((citizen) => citizen.age)
     .reduce((a, b) => a + b, 0);
 
-  const avgAge = (ageSum / totalPopulation).toLocaleString(undefined, {
-    maximumFractionDigits: 1,
-  });
-
   const weightSum = population
     .map((citizen) => citizen.weight)
     .reduce((a, b) => a + b, 0);
-
-  const avgWeight = (weightSum / totalPopulation).toLocaleString(undefined, {
-    maximumFractionDigits: 1,
-  });
 
   const heightSum = population
     .map((citizen) => citizen.height)
     .reduce((a, b) => a + b, 0);
 
-  const avgHeight = (heightSum / totalPopulation).toLocaleString(undefined, {
-    maximumFractionDigits: 1,
-  });
-
   const friendsSum = population
     .map((citizen) => citizen.friends.length)
     .reduce((a, b) => a + b, 0);
 
-  const avgFriends = (friendsSum / totalPopulation).toLocaleString(undefined, {
-    maximumFractionDigits: 1,
-  });
+  const avg = (sum) =>
+    (sum / totalPopulation).toLocaleString(undefined, {
+      maximumFractionDigits: 1,
+    });
 
+  // Array of all hair colors
   const hairColors = population.map((citizen) => citizen.hair_color);
 
+  // Array of all professions
   const citizensProfessions = population.map((citizen) => citizen.professions);
 
   let professions = [];
@@ -69,19 +60,19 @@ const GeneralInfo = ({ population }) => {
       </div>
       <div className="general-info-card">
         <h3>Median Age</h3>
-        <div>{avgAge}</div>
+        <div>{avg(ageSum)}</div>
       </div>
       <div className="general-info-card">
         <h3>Median Weight</h3>
-        <div>{avgWeight}</div>
+        <div>{avg(weightSum)}</div>
       </div>
       <div className="general-info-card">
         <h3>Median Height</h3>
-        <div>{avgHeight}</div>
+        <div>{avg(heightSum)}</div>
       </div>
       <div className="general-info-card">
         <h3>Avg friends</h3>
-        <div>{avgFriends}</div>
+        <div>{avg(friendsSum)}</div>
       </div>
       <div className="general-info-card">
         <h3>Common Hair Color</h3>
