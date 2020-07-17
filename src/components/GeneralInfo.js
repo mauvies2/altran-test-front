@@ -1,7 +1,7 @@
 import React from "react";
 
 const GeneralInfo = ({ population }) => {
-  const totalPopulation = population.length;
+  const totalPop = population.length;
 
   const ageSum = population
     .map((citizen) => citizen.age)
@@ -20,7 +20,7 @@ const GeneralInfo = ({ population }) => {
     .reduce((a, b) => a + b, 0);
 
   const avg = (sum) =>
-    (sum / totalPopulation).toLocaleString(undefined, {
+    (sum / totalPop).toLocaleString(undefined, {
       maximumFractionDigits: 1,
     });
 
@@ -28,11 +28,11 @@ const GeneralInfo = ({ population }) => {
   const hairColors = population.map((citizen) => citizen.hair_color);
 
   // Array of all professions
-  const citizensProfessions = population.map((citizen) => citizen.professions);
+  const profArray = population.map((citizen) => citizen.professions);
 
   let professions = [];
-  for (let i = 0; i < citizensProfessions.length; i++) {
-    professions = professions.concat(citizensProfessions[i]);
+  for (let i = 0; i < profArray.length; i++) {
+    professions = professions.concat(profArray[i]);
   }
 
   const commonValue = (array) => {
@@ -56,7 +56,7 @@ const GeneralInfo = ({ population }) => {
     <section className="general-info">
       <div className="general-info-card">
         <h3>Citizens</h3>
-        <div>{totalPopulation}</div>
+        <div>{totalPop}</div>
       </div>
       <div className="general-info-card">
         <h3>Median Age</h3>

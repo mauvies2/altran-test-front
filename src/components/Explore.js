@@ -8,7 +8,7 @@ const Explore = (props) => {
   const { population } = props;
 
   // State of gnomes to be display
-  const [gnomesFiltered, setGnomesFiltered] = useState(population);
+  const [popuFilter, setPopuFilter] = useState(population);
 
   // Filter query
   const filter = (query) => {
@@ -44,7 +44,7 @@ const Explore = (props) => {
           ).length > 0
       );
     }
-    setGnomesFiltered(queryFiltered);
+    setPopuFilter(queryFiltered);
   };
   return (
     <section className="explore">
@@ -55,7 +55,7 @@ const Explore = (props) => {
       </div>
 
       <Filter filter={filter} />
-      <Citizens gnomesFiltered={gnomesFiltered} />
+      <Citizens popuFilter={popuFilter} />
     </section>
   );
 };

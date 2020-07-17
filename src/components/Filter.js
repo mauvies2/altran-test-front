@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function Filter(props) {
+const Filter = (props) => {
   const initialQuery = {
     name: "",
     age: "",
@@ -15,7 +15,7 @@ export default function Filter(props) {
   // State to control styles
   const [filter, setFilter] = useState(false);
 
-  const handleInputChange = (e) => {
+  const handleInput = (e) => {
     const { name, value } = e.target;
     setQuery({ ...query, [name]: value });
   };
@@ -49,7 +49,7 @@ export default function Filter(props) {
               value={query.name}
               type="text"
               placeholder="Name"
-              onChange={handleInputChange}
+              onChange={handleInput}
             ></input>
           </div>
           <div>
@@ -58,7 +58,7 @@ export default function Filter(props) {
               value={query.hair_color}
               type="text"
               placeholder="Enter hair color"
-              onChange={handleInputChange}
+              onChange={handleInput}
             ></input>
           </div>
           <div>
@@ -67,7 +67,7 @@ export default function Filter(props) {
               value={query.age}
               type="number"
               placeholder="Age"
-              onChange={handleInputChange}
+              onChange={handleInput}
             ></input>
           </div>
 
@@ -77,7 +77,7 @@ export default function Filter(props) {
               value={query.friends}
               type="number"
               placeholder="# Of friends"
-              onChange={handleInputChange}
+              onChange={handleInput}
             ></input>
           </div>
           <div>
@@ -86,7 +86,7 @@ export default function Filter(props) {
               value={query.profession}
               type="text"
               placeholder="Profession"
-              onChange={handleInputChange}
+              onChange={handleInput}
             ></input>
           </div>
         </div>
@@ -99,4 +99,5 @@ export default function Filter(props) {
       </form>
     </div>
   );
-}
+};
+export default Filter;

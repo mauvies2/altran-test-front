@@ -1,18 +1,20 @@
 import React, { useState } from "react";
 import Citizen from "./Citizen";
 
-export default function Citizens(props) {
-  // State of gnomes to be display on list
-  const [numGnomesDisplayed, setnumGnomesDisplayed] = useState(5);
+const Citizens = (props) => {
+  // State of number of gnomes to be display on list
+  const [numGnomes, setNumGnomes] = useState(5);
 
   return (
     <div className="citizens">
-      {props.gnomesFiltered.slice(0, numGnomesDisplayed).map((citizen) => {
+      {props.popuFilter.slice(0, numGnomes).map((citizen) => {
         return <Citizen key={citizen.id} citizen={citizen} />;
       })}
-      <button onClick={() => setnumGnomesDisplayed(numGnomesDisplayed + 5)}>
+      <button onClick={() => setNumGnomes(numGnomes + 5)}>
         See more Gnomes
       </button>
     </div>
   );
-}
+};
+
+export default Citizens;

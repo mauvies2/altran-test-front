@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Citizen({ citizen }) {
+const Citizen = ({ citizen }) => {
   return (
     <section className="citizen">
       <div className="col img">
@@ -47,4 +47,6 @@ export default function Citizen({ citizen }) {
       </div>
     </section>
   );
-}
+};
+
+export default Citizen;
