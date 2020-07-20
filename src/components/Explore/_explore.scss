@@ -1,0 +1,5 @@
+.explore {
+  padding: 2rem 1rem;
+  @include flexbox(flex-start, center, column);
+  border-radius: 15px;
+}

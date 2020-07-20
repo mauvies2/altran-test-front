@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Citizen from "./Citizen";
+import Citizen from "../Citizen/Citizen";
 
 const Citizens = (props) => {
   // State of number of gnomes to be display on list

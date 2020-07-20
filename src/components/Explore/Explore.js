@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-import Filter from "./Filter";
-import Citizens from "./Citizens";
+import Filter from "../Filter/Filter";
+import Citizens from "../Citizens/Citizens";
 
 const Explore = (props) => {
   const { population } = props;

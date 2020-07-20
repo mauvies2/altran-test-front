@@ -1,0 +1,31 @@
+.main-container {
+  padding: 2rem 2rem;
+  width: 50rem;
+  @include flexbox(center, center, column);
+  background-color: rgba(31, 31, 31, 0.685);
+  border-radius: 15px;
+}
+
+button {
+  width: 12rem;
+  height: 3rem;
+  border: 2px solid $btn-color;
+  border-radius: 6px;
+  background-color: $background-color;
+  cursor: pointer;
+  color: $btn-color;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  margin: 0.5rem;
+  &:hover,
+  &:active {
+    background-color: rgba($color: $background-color, $alpha: 0.6);
+    font-weight: 600;
+    outline: none;
+  }
+  &:focus {
+    outline: none;
+  }
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import GeneralInfo from "./GeneralInfo";
+import GeneralInfo from "../GeneralInfo/GeneralInfo";
 
 const Intro = ({ population }) => {
   return (

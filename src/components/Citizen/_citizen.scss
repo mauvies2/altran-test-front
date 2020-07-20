@@ -1,0 +1,39 @@
+/// CITIZEN ///
+
+.citizen {
+  @include flexbox(space-around, flex-start, row);
+  width: 100%;
+  background-color: rgba(31, 31, 31, 0.733);
+  margin: 1rem 0;
+  flex-wrap: wrap;
+  border-radius: 20px;
+  padding: 1rem 1rem;
+
+  .col {
+    @include flexbox(flex-start, center, column);
+    flex-wrap: wrap;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0.5rem;
+
+    p {
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      line-height: 1.5;
+      text-align: center;
+    }
+    h2 {
+      font-size: 1rem;
+      letter-spacing: 1px;
+      margin: 0 0.5rem 0.5rem 0.5rem;
+    }
+  }
+}
+
+.image-cropper {
+  width: 70px;
+  height: 70px;
+  overflow: hidden;
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+}
