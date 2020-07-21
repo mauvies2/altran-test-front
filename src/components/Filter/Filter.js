@@ -45,6 +45,7 @@ const Filter = (props) => {
         <div className="filter" style={filterStyle}>
           <div>
             <input
+              data-testid="name"
               name="name"
               value={query.name}
               type="text"
@@ -91,8 +92,14 @@ const Filter = (props) => {
           </div>
         </div>
         <div className="filter-bottom-btn">
-          <button style={backBtn}>Search</button>
-          <button style={backBtn} onClick={() => setFilter(!filter)}>
+          <button style={backBtn} data-testid="search-button">
+            Search
+          </button>
+          <button
+            style={backBtn}
+            data-testid="back-button"
+            onClick={() => setFilter(!filter)}
+          >
             Back
           </button>
         </div>

@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { render, cleanup } from "@testing-library/react";
 import App from "./App";
+import { getQueriesForEelement } from "@testing-library/dom";
 
 it("renders without crashing", async () => {
   const div = document.createElement("div");
